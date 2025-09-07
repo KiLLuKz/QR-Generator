@@ -1,0 +1,98 @@
+/* Global Style */
+body {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background: linear-gradient(135deg, #0f111a, #1c1f2a);
+    color: #ffffff;
+}
+
+/* Container */
+.container {
+    background: rgba(20, 23, 38, 0.85);
+    padding: 50px 40px;
+    border-radius: 25px;
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    backdrop-filter: blur(10px);
+}
+
+/* Title */
+h1 {
+    font-size: 28px;
+    margin-bottom: 30px;
+    letter-spacing: 1px;
+    color: #00ffc6;
+}
+
+/* Input Fields */
+input {
+    display: block;
+    margin: 15px auto;
+    padding: 12px 15px;
+    width: 250px;
+    font-size: 16px;
+    border: none;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.05);
+    color: #ffffff;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+input::placeholder {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+input:focus {
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 10px #00ffc6;
+}
+
+/* Buttons */
+button {
+    padding: 12px 25px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 15px;
+    background: linear-gradient(135deg, #00ffc6, #0088ff);
+    border: none;
+    color: #0f111a;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    margin: 5px;
+}
+
+button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 20px rgba(0,255,198,0.6);
+}
+
+/* Status Text */
+h3#status {
+    margin-top: 20px;
+    font-size: 16px;
+    color: #ffcc00;
+    min-height: 22px;
+}
+
+/* QR Image */
+img#qrImage {
+    display: block;           /* บังคับเป็น block */
+    margin: 25px auto 0 auto; /* top 25px, horizontal auto, bottom 0 */
+    width: 200px;
+    height: 200px;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0,255,198,0.4);
+    background: rgba(255,255,255,0.05);
+    transition: all 0.3s ease;
+    object-fit: cover;
+}
+
+img#qrImage:hover {
+    transform: scale(1.01);
+    box-shadow: 0 15px 35px rgba(0,255,198,0.6);
+}

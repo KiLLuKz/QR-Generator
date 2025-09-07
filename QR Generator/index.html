@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>QR Code Generator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>QR Code Generator</h1>
+        <input id="qrName" type="text" placeholder="QR Name">
+        <input id="qrLink" type="text" placeholder="URL / Text">
+        <div class="buttons">
+            <button onclick="generateQR()">Generate</button>
+            <button onclick="openFolder()">Open Folder</button>
+        </div>
+        <h3 id="status"></h3>
+        <!-- Placeholder QR -->
+        <img id="qrImage" src="placeholder.png" alt="QR Code">
+    </div>
+
+    <script>
+        function generateQR() {
+            let name = document.getElementById('qrName').value;
+            let link = document.getElementById('qrLink').value;
+            window.pywebview.api.generate_qr(name, link);
+        }
+
+        function openFolder() {
+            window.pywebview.api.open_last_directory();
+        }
+
+        // ฟังก์ชัน callback จาก Python
+        function showQR(imgPath, msg) {
+            let qrImg = document.getElementById('qrImage');
+            qrImg.src = imgPath;
+            qrImg.style.display = 'block'; // แสดง QR หลัง Generate
+            document.getElementById('status').innerText = msg;
+        }
+    </script>
+</body>
+</html>
